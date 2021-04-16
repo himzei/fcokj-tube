@@ -7,9 +7,11 @@ html(lang="ko")
         title #{pageTitle} | 외국인과동행
     body
         header 
-
-
             h1=pageTitle
+            nav 
+                ul 
+                    li 
+                        a(href="/videos/upload") Upload Video
         main
             block content
     include partials/footer.pug
