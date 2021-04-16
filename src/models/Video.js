@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import videoRouter from "../routers/videoRouter";
 
 const videoSchema = new mongoose.Schema({
   title: String,
