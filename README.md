@@ -1,21 +1,26 @@
 # fcokj tube
 
-/
+## Router
 
-/users/join
-/users/login
-/users/edit
-/users/delete
+- [] / -> Home
+- [] /join -> join
+- [] /login -> Login
+- [] /search -> Search
 
-/videos/search
-/videos/watch
-/videos/edit
-/videos/delete
-/videos/comments
+- [] /users/:id -> See User
+- [] /users/logout -> Log out
+- [] /users/edit -> Edit my Profile
+- [] /users/delete -> Delete User
 
-/boards/search
-/boards/view
-/boards/edit
-/boards/edit
-/boards/delete
-/boards/comments
+- [] /videos/:id -> See Video
+- [] /videos/:id/edit -> Edit Video
+- [] /videos/:id/delete -> Delete Video
+- [] /videos/upload -> Upload Video
+
+- [] /boards/search
+- [] /boards/view
+- [] /boards/edit
+- [] /boards/edit
+- [] /boards/delete
+- [] /boards/comments
+- [] /boards/comments/delete
