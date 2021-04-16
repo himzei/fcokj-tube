@@ -1,4 +1,32 @@
-export const trending = (req, res) => res.render("home", { pageTitle: "홈" });
+export const trending = (req, res) => {
+  const videos = [
+    {
+      title: "First Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 1,
+    },
+    {
+      title: "Second Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 1,
+    },
+    {
+      title: "Thrid Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 1,
+    },
+  ];
+  res.render("home", { pageTitle: "홈", videos });
+};
 export const see = (req, res) => {
   return res.render("watch", { pageTitle: "비디오" });
 };
