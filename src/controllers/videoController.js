@@ -1,4 +1,4 @@
-export const trending = (req, res) => res.render("home");
+export const trending = (req, res) => res.render("home", { pageTitle: "홈" });
 export const see = (req, res) => {
   return res.render("watch");
 };
