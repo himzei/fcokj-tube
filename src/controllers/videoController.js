@@ -1,6 +1,6 @@
 export const trending = (req, res) => res.render("home", { pageTitle: "홈" });
 export const see = (req, res) => {
-  return res.render("watch");
+  return res.render("watch", { pageTitle: "비디오" });
 };
 export const edit = (req, res) => res.send("Edit");
 export const search = (req, res) => res.send("Search");
