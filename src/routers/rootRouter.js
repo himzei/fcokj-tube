@@ -1,5 +1,4 @@
 import express from "express";
-import { get } from "mongoose";
 import {
   getJoin,
   postJoin,
