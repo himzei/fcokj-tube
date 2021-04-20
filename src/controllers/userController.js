@@ -1,6 +1,7 @@
 import User from "../models/User";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
+import Video from "../models/Video";
 
 export const getJoin = (req, res) => {
   return res.render("join", { pageTitle: "Create Account" });
@@ -203,4 +204,22 @@ export const postChangePassword = async (req, res) => {
   req.session.user.password = user.password;
   return res.redirect("/users/logout");
 };
-export const see = (req, res) => res.send("See");
+export const see = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  const user = await User.findById(id).populate({
+    path: "videos",
+    options: { sort: { createdAt: -1 } },
+  });
+
+  console.log(user);
+  if (!user) {
+    return res.status(404).render("404", { pageTitle: "User Not Found" });
+  }
+
+  return res.render("users/profile", {
+    pageTitle: user.name,
+    user,
+  });
+};
