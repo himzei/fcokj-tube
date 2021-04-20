@@ -1,3 +1,5 @@
+import multer from "multer";
+
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "외국인과동행";
   res.locals.loggedIn = Boolean(req.session.loggedIn);
@@ -21,3 +23,7 @@ export const publicOnlyMiddleware = (req, res, next) => {
     return res.redirect("/");
   }
 };
+
+export const uploadFiles = multer({
+  dest: "uploads/",
+});
