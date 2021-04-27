@@ -1,5 +1,5 @@
 const hello = async () => {
-  alert("hi! its working");
+  alert("hi");
   const x = await fetch("");
 };
 
