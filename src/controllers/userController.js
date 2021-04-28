@@ -210,7 +210,10 @@ export const see = async (req, res) => {
   } = req;
   const user = await User.findById(id).populate({
     path: "videos",
-    options: { sort: { createdAt: -1 } },
+    populate: {
+      path: "owner",
+      model: "User",
+    },
   });
 
   console.log(user);
