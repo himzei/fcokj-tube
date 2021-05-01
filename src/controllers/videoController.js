@@ -11,7 +11,7 @@ export const watch = async (req, res) => {
   const {
     params: { id },
   } = req;
-  const video = await Video.findById(id).populate("owner");
+  const video = await Video.findById(id).populate("owner").populate("comments");
 
   if (!video) {
     return res.render("404", { pageTitle: "video not found" });
@@ -152,7 +152,7 @@ export const createComment = async (req, res) => {
   } = req;
 
   const video = await Video.findById(id);
-
+  console.log("안녕", video);
   if (!video) {
     return res.sendStatus(404);
   }
@@ -161,5 +161,8 @@ export const createComment = async (req, res) => {
     owner: user._id,
     video: id,
   });
+  console.log(comment);
+  video.comments.push(comment._id);
+  video.save();
   return res.sendStatus(201);
 };
