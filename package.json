@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "reference tube",
   "scripts": {
-    "start":"node build/init.js",
-    "build": "num run build:server && npm run build:assets",
+    "start": "node build/init.js",
+    "build": "npm run build:server && npm run build:assets",
     "build:server": "babel src -d build",
     "build:assets": "webpack --mode=production",
     "dev:server": "nodemon",
